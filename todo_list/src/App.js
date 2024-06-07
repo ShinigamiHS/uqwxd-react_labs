@@ -38,7 +38,6 @@ const App = () => {
   }
 
   function submitEdits(newTodo) {
-    // Add the submitEdits code here
     const updatedTodos = [...todos].map((todo) => {
       if (todo.id === newTodo.id) {
         todo.text = document.getElementById(newTodo.id).value;
@@ -48,7 +47,8 @@ const App = () => {
     setTodos(updatedTodos);
     setTodoEditing(null);
   }
-  /* useEffect(() => {
+
+  useEffect(() => {
     const json = localStorage.getItem("todos");
     const loadedTodos = JSON.parse(json);
     if (loadedTodos) {
@@ -60,8 +60,8 @@ const App = () => {
       const json = JSON.stringify(todos);
       localStorage.setItem("todos", json);
     }
-  }, [todos]); */
-  
+  }, [todos]);
+
 
   return (
     <div id="todo-list">
